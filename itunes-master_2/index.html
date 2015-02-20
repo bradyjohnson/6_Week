@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html ng-app="itunes">
+  <head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="material.css">
+    <link rel="stylesheet" type="text/css" href="ripples.css">
+
+
+  </head>
+  <body ng-controller="mainCtrl">
+    <div class="navbar"  role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-music"></span> DevTunes</a>
+    </div>
+    <form class="navbar-form navbar-left" role="search" ng-submit="">
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="artist" placeholder="Artist Name" >
+        <button type="submit" class="btn btn-info btn-block" ng-click="getSongData()"> Submit </button>
+      </div>
+    </form>
+</div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading"> Your Search Results:</div>
+          <div class="panel-body">
+            <div class="gridStyle" ng-grid="gridOptions" swap-image="defaultInfo.search"></div>
+          </div>
+          </div>
+        </div>
+      </div>
+
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/ng-grid/2.0.11/ng-grid.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/mainCtrl.js"></script>
+    <script src="js/itunesService.js"></script>
+    <script src="js/material.min.js"></script>
+    <script src="js/ripples.min.js"></script>
+  </body>
+</html>
